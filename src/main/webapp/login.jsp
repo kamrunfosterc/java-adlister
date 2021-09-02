@@ -19,5 +19,14 @@
             <button id="submit">Submission</button>
         </form>
 
+        <c:choose>
+            <c:when test="${username == 'admin' && password == 'password'}">
+                <% response.sendRedirect("/profile.jsp");%>
+            </c:when>
+<%--            <c:otherwise>--%>
+<%--            </c:otherwise>--%>
+        </c:choose>
+
     </body>
+
 </html>
