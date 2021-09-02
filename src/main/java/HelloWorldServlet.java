@@ -9,18 +9,26 @@ import java.io.PrintWriter;
 //@WebServlet(urlPatterns = "/hello-world") //http://localhost:8080/hello-world  4.) HELLO WORLD EXERCISE
 @WebServlet(urlPatterns = "/count-that") //http://localhost:8080/count-that  5.) COUNT VISITS EXERCISE
 public class HelloWorldServlet extends HttpServlet {
-
-    //TODO 4.) Hello World Exercise part 4
+//
+//    //TODO 4.) Hello World Exercise part 4
 //    @Override
 //    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 //        res.setContentType("text/html");
-//        PrintWriter out = res.getWriter();
-////        out.println("<h1>Hello, World!<h1>");//initial hello world exercise message printed
+//        PrintWriter out = res.getWriter();// grab writer from response object --> allows us to display to html
+//        out.println("<h1>Hello, World!<h1>\n");//initial hello world exercise message printed
+////
+//        //TODO 4.) BONUS
+//          String name = req.getParameter("name");////http://localhost:8080/hello-world?name=kayrun (html forms in curriculum)
 //
-//        String name = req.getParameter("name");
-//        out.println("<h1>Hello,<h1> "+ name + " World!<h1>");
+//          if (name == null){
+//              out.println("<h1>Hello,Mr. Foster!<h1>");// if nothing changed this is the default
+//          } else {
+//              out.println("<h1>Hello,<h1> "+ name + " World!<h1>");
+//          }
 //    }
-    //TODO 5.) page view counter (comment out others do run this)
+
+
+////    //TODO 5.) page view counter (comment out others do run this)
     private int pageVisits;
     public void init(){
         //reset visits counter
@@ -35,17 +43,17 @@ public class HelloWorldServlet extends HttpServlet {
         String docuType ="<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
         out.println(docuType +
                 "<html>\n" +
-                "<head><title>" + ourTitle + "</title></head>\n" +
-                "<body bgcolor = \"#f0f0f0\">\n" +
-                "<h1 align = \"center\">" + ourTitle + "</h1>\n" +
+                "<head><title>" + ourTitle + "</title><style></style></head>\n" +
+                "<body bgcolor = \"#7FFFD4\">\n" +
+                "<h1 color = \"white\" align = \"center\">" + ourTitle + "</h1>\n" +
                 "<h2 align = \"center\">" + pageVisits + "</h2>\n" +
                 "</body>"+
                 "</html>"
         );
-
-        // TODO Bonus (comment out others do run this)
-
-
+//
+//        // TODO Bonus (comment out others do run this)
+//
+//
     }
 
 
