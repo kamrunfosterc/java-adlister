@@ -7,8 +7,8 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean wasLoginError =  request.getParameter("error") != null;
-        request.setAttribute("error",wasLoginError);
+        boolean wasLoginError = request.getParameter("error") != null;
+        request.setAttribute("error", wasLoginError);
         request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
@@ -30,3 +30,4 @@ public class LoginServlet extends HttpServlet {
             }
         }
     }
+}
