@@ -11,6 +11,13 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+//    private List<Product> productsList = new ArrayList<>();
+
+
+//    public void insert(Product product){
+//        productsList.add(product);
+//    };
+
     @Override
     public void insert(Ads ads) {
 

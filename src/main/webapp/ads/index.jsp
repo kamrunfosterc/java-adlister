@@ -13,12 +13,10 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach var="singleAdt" items="${adlisting}">
+<c:forEach var="ad" items="${ads}">
     <div class="item">
-        <h3>${singleAd.id}</h3>
-        <p>${singleAd.userId}</p>
-        <p>${singleAd.title}</p>
-        <p>${singleAd.description}</p>
+        <h3>${ad.title}</h3>
+        <p>${ad.description}</p>
     </div>
 </c:forEach>
 
