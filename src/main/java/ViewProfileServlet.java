@@ -17,7 +17,7 @@ public class ViewProfileServlet extends HttpServlet {
 //                request.setAttribute("currentUser", currentUser);
 //            }
 //        }
-        //todo exercise walkthrough
+        //todo exercise walk through
         if(request.getSession().getAttribute("user") == null){
             response.sendRedirect("/login");
             return;

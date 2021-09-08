@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 //                response.sendRedirect("/profile");
 //            }
 //        }
-        //todo exercise walkthrough
+        //todo exercise walk through
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         boolean validAttempt = username.equals("admin") && password.equals("password");

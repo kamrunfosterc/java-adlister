@@ -9,7 +9,11 @@
     <jsp:include page="partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome ${currentUser.firstName}.</h1>
+        <!--lecture-->
+<%--        <h1>Welcome ${currentUser.firstName}.</h1>--%>
+
+        <!--Exercise-->
+        <h1>Welcome ${sessionScope.username}!</h1>
     </div>
 
 </body>

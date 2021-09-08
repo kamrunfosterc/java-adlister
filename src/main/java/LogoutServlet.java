@@ -13,7 +13,7 @@ public class LogoutServlet extends HttpServlet {
 //        currentSession.invalidate();// logs out of current session
 //        response.sendRedirect("/login");// redirects to the login page
 //    }
-        //todo exercise walkthrough
+        //todo exercise walk through
         request.getSession().invalidate();
         response.sendRedirect("/login");
 
