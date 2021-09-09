@@ -26,4 +26,9 @@ public class CreateAdServlet extends HttpServlet {
         }
         response.sendRedirect("/ads");
     }
+
+    // TODO: 9/9/21 walkthrough
+//    DaoFactory.getAdsDao().insert(ad);
+//    response.sendRedirect("/ads");
+
 }
