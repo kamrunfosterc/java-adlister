@@ -6,6 +6,7 @@ import java.sql.Connection;
 
 public class DaoFactory {
     private static Ads adsDao;
+    private static Users UsersDao;
     private static Config config = new Config();
     private Connection usersData;
 
@@ -15,6 +16,15 @@ public class DaoFactory {
         }
         return adsDao;
     }
+
+    public static Users getUsersDao() {
+        if (UsersDao == null) {
+            UsersDao = new MySQLUsersDao(config);
+        }
+        return UsersDao;
+    }
+
+
 
 
 
