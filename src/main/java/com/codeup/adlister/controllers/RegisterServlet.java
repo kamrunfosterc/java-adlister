@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,10 +40,17 @@ public class RegisterServlet extends HttpServlet {
             response.sendRedirect("/register");
             return;
         }
+
+//        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());// moved to user.java
+        //common practice could be to set it model User class setPassword() method
+
+        System.out.println(hashedPassword);
+
         User user = new User();
         user.setUsername(username);
         user.setEmail(email);
-        user.setPassword(password);
+        user.setPassword(password);//old way... also best after moving hashedPass to user.java
+//        user.setPassword(hashedPassword);// be careful bc could hash a already hashed pass and things get complicated
 
         DaoFactory.getUsersDao().insert(user);// important part
         response.sendRedirect("/login");
