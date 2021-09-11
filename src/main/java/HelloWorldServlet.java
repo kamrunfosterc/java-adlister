@@ -27,34 +27,34 @@ public class HelloWorldServlet extends HttpServlet {
 //          }
 //    }
 
-
 ////    //TODO 5.) page view counter (comment out others do run this)
-    private int pageVisits;
-    public void init(){
-        //reset visits counter
-        pageVisits = 0;
-    }
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-        pageVisits++;//increments hitCount by 1 each time
-
-        PrintWriter out = response.getWriter();
-        String ourTitle = "Number of times Folk visit";
-        String docuType ="<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-        out.println(docuType +
-                "<html>\n" +
-                "<head><title>" + ourTitle + "</title><style></style></head>\n" +
-                "<body bgcolor = \"#7FFFD4\">\n" +
-                "<h1 color = \"white\" align = \"center\">" + ourTitle + "</h1>\n" +
-                "<h2 align = \"center\">" + pageVisits + "</h2>\n" +
-                "</body>"+
-                "</html>"
-        );
+//    private int pageVisits;
+//    public void init(){
+//        //reset visits counter
+//        pageVisits = 0;
+//    }
+//    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        response.setContentType("text/html");
+//        pageVisits++;//increments hitCount by 1 each time
 //
+//        PrintWriter out = response.getWriter();
+//        String ourTitle = "Number of times Folk visit";
+//        String docuType ="<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
+//        out.println(docuType +
+//                "<html>\n" +
+//                "<head><title>" + ourTitle + "</title><style></style></head>\n" +
+//                "<body bgcolor = \"#7FFFD4\">\n" +
+//                "<h1 color = \"white\" align = \"center\">" + ourTitle + "</h1>\n" +
+//                "<h2 align = \"center\">" + pageVisits + "</h2>\n" +
+//                "</body>"+
+//                "</html>"
+//        );
+
 //        // TODO Bonus (comment out others do run this)
 //
 //
-    }
+
+//    }
 
 
 
