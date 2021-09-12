@@ -38,7 +38,7 @@
     </head>
     <body>
     <jsp:include page="partial/navBar.jsp"/>
-
+        <%-- TODO 1. Build a Login Form --%>>
         <form method="post" action="/login">
             <c:if test="${error}">
                 <p>Username or password invalid</p>
