@@ -14,12 +14,14 @@ import java.io.IOException;
 @WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
             return;
         }
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
@@ -48,5 +50,36 @@ public class LoginServlet extends HttpServlet {
         } else {
             response.sendRedirect("/login");
         }
+
+        //todo ############## passwords exercise ##############
+
+        //Make sure passwords are being hashed before they enter the database
+        //Change your login logic to check against users' hashed passwords
+        //Don't allow ad creation unless a user is logged in
+        //When a new ad is created, assign the user id of the logged in user to the ad
+        String newUserName = request.getParameter("username");
+        String newPassword = request.getParameter("password");
+
+        User newUser = DaoFactory.getUsersDao().findByUsername(newUserName);
+
+        String hash = BCrypt.hashpw(password, BCrypt.gensalt());//hashes password
+//        System.out.println(hash);// will put in console the hashed password
+
+        //todo verify hashes
+        boolean passwordCheck= BCrypt.checkpw(newPassword, newUser.getPassword());//can sub diff strings
+
+        //todo don't allow ad creation unless user is logged in
+        if(newUser == null){
+            response.sendRedirect("/login");
+            return;
+        }
+        if (passwordCheck) {
+            request.getSession().setAttribute("user", newUser);
+            response.sendRedirect("/profile");
+        } else {
+            response.sendRedirect("/login");
+        }
+
+
     }
 }
