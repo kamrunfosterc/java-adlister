@@ -25,6 +25,7 @@
 <%--    </div>--%>
 
 <%--    todo sam walk through --%>
+
     <select name="crust_type">
         <option value="hand-tossed">hand-tossed</option>
         <option value="stuffed">stuffed</option>
@@ -39,7 +40,7 @@
     </select>
     <br>
     <select name="topping_type">
-        <option value="peperoni">peperoni</option>
+        <option value="pepperoni">peperoni</option>
         <option value="alfredo">alfredo</option>
         <option value="pesto">pesto</option>
         <option value="bbq">bbq</option>
@@ -52,29 +53,28 @@
         <option value="x-lrg">extra large</option>
     </select>
     <br>
-    <label for="peperoni">
-        peperoni <input type="checkbox" id="'peperoni" name="toppings" value="peperoni">
+<%--    toppings check box below--%>
+    <label for="pepperoni">
+        peperoni <input type="checkbox" id="pepperoni" name="toppings" value="peperoni">
     </label>
     <label for="sausage">
-        peperoni <input type="checkbox" id="'peperoni" name="toppings" value="peperoni">
+        peperoni <input type="checkbox" id="sausage" name="toppings" value="peperoni">
     </label>
     <label for="pineapple">
-        peperoni <input type="checkbox" id="'peperoni" name="toppings" value="peperoni">
+        peperoni <input type="checkbox" id="pineapple" name="toppings" value="peperoni">
     </label>
     <label for="spinach">
-        peperoni <input type="checkbox" id="'peperoni" name="toppings" value="peperoni">
+        peperoni <input type="checkbox" id="spinach" name="toppings" value="peperoni">
     </label>
     <label for="cheeseburger">
-        peperoni <input type="checkbox" id="'peperoni" name="toppings" value="peperoni">
-    </label>
-    <label for="peperoni">
-        peperoni <input type="checkbox" id="'peperoni" name="toppings" value="peperoni">
+        peperoni <input type="checkbox" id="cheeseburger" name="toppings" value="peperoni">
     </label>
     <label for="address">
-        peperoni <input type="checkbox" id="'address" name="toppings" value="peperoni">
+        peperoni <input type="checkbox" id="address" name="toppings" value="peperoni">
     </label>
 
     <input type="submit">
+
 </form>
 
 
